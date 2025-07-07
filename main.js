@@ -1,42 +1,40 @@
+const title = document.getElementById("title");
+title.style.color = "white";
 
-const title = document.getElementById('title');
-title.style.color = 'white';
-
-const list = document.getElementsByClassName('list');
+const list = document.getElementsByClassName("list");
 console.log(list);
 
 for (let i = 0; i < list.length; i++) {
-    list[i].style.color = 'whitesmoke';
-    list[i].style.textDecoration = 'none';
+  list[i].style.color = "whitesmoke";
+  list[i].style.textDecoration = "none";
 }
 
-const title2 = document.getElementsByTagName('h2');
+const title2 = document.getElementsByTagName("h2");
 console.log(title2);
 
 for (let i = 0; i < title2.length; i++) {
-    title2[i].style.color = 'lightblue';
+  title2[i].style.color = "lightblue";
 }
 
-
-const btnArticle = document.querySelector('.btnArticle');
+const btnArticle = document.querySelector(".btnArticle");
 btnArticle.textContent = "Voir le nouveau contenu";
 
 //** element.querySelectorAll récupérer tous les elements */
-const btns = document.querySelectorAll('.btn');
+const btns = document.querySelectorAll(".btn");
 console.log(btns);
 
 /** foreach pour chaque element de la collection */
 btns.forEach((btn) => {
-    console.log(btn);
-    btn.style.boxShadow = '0 0 10px 4px lightblue';
+  console.log(btn);
+  btn.style.boxShadow = "0 0 10px 4px lightblue";
 });
 
 /* element.textContent */
-const h1 = document.querySelector('h1');
-h1.textContent = 'Nouveau titre modifié  avec textContent';
+const h1 = document.querySelector("h1");
+h1.textContent = "Nouveau titre modifié  avec textContent";
 
 /* element.innerHTML */
-const container_section = document.getElementById('container_section');
+const container_section = document.getElementById("container_section");
 console.log(container_section);
 container_section.innerHTML = `
                 <articles>
@@ -47,20 +45,19 @@ container_section.innerHTML = `
             `;
 
 /* element.STYLE.PROPERTY */
-const btn = document.querySelector('.btn');
-btn.style.boxShadow = '0 0 10px 4px orange';
+const btn = document.querySelector(".btn");
+btn.style.boxShadow = "0 0 10px 4px orange";
 
 /**
  * element.setAttribute('property', 'value')
-*/
-const link = document.getElementById('link');
-link.setAttribute('href', 'https://www.google.com');
+ */
+const link = document.getElementById("link");
+link.setAttribute("href", "https://www.google.com");
 
-
-/** 
+/**
  * createElement
  * */
-const newTitle = document.createElement('h2');
+const newTitle = document.createElement("h2");
 newTitle.textContent = `
     un nouveau titre
 `;
@@ -71,9 +68,25 @@ container_section.appendChild(newTitle);
  * AddEventListener
  */
 
-const myBtn = document.querySelector('#myBtn');
-myBtn.addEventListener('click', () => {
-    // console.log('Click sur le bouton');
-    alert('click!');
-    myBtn.classList.toggle('background-rebond');
+const myBtn = document.querySelector("#myBtn");
+myBtn.addEventListener("click", () => {
+  // console.log('Click sur le bouton');
+  alert("click!");
+  myBtn.classList.toggle("background-rebond");
+});
+
+/**
+ * mouse event
+ */
+
+const myBtnMouseEvent = document.querySelector("#myBtnMouseEvent");
+console.log(myBtnMouseEvent);
+
+myBtnMouseEvent.addEventListener("mouseover", () => {
+  myBtnMouseEvent.style.color = "white";
+  myBtnMouseEvent.style.backgroundColor = "lightblue";
+});
+
+myBtnMouseEvent.addEventListener("mouseout", () => {
+  myBtnMouseEvent.style.backgroundColor = "";
 });
